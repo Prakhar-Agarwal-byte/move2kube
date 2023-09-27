@@ -127,7 +127,7 @@ func init() {
 		new(kubernetes.Kubernetes),
 		new(kubernetes.Knative),
 		new(kubernetes.Tekton),
-		new(kubernetes.ArgoCD),
+		// new(kubernetes.ArgoCD),
 		new(kubernetes.BuildConfig),
 		new(kubernetes.Parameterizer),
 		new(kubernetes.KubernetesVersionChanger),
