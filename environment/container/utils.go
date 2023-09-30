@@ -1,5 +1,4 @@
 //go:build my_exclude
-// +build my_exclude
 
 /*
  *  Copyright IBM Corporation 2020, 2021
