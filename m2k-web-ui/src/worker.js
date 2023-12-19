@@ -79,15 +79,22 @@ const processMessage = async (e) => {
                 console.log('worker: wasmModuleInstance', wasmModuleInstance);
                 console.log('worker: wasmModuleInstance.exports', wasmModuleInstance.exports);
                 console.log('worker: wasmModuleInstance.exports.memory.buffer', wasmModuleInstance.exports.memory.buffer);
+                const startTime = performance.now();
                 try {
                     // wasi.start(wasmModule.instance);
                     wasi.start(wasmModuleInstance);
+                    const endTime = performance.now();
+                    const elapsedTime = endTime - startTime;
+                    console.log(`Elapsed time: ${elapsedTime} milliseconds`);
                     // TODO: unreachable?
                     self.postMessage({ 'type': MSG_TRANFORM_DONE, 'payload': 'transformation result (no exit code)' });
                 } catch (e) {
                     // console.log(typeof e);
                     // console.log(e.exit_code);
                     // console.log(Object.entries(e));
+                    const endTime = performance.now();
+                    const elapsedTime = endTime - startTime;
+                    console.log(`Elapsed time: ${elapsedTime} milliseconds`);
                     console.log('worker: the wasm module finished with exit code:', e);
                     // TODO: assuming the output file name is myproject.zip
                     const myprojectzip = fds[3].dir.contents["myproject.zip"].data.buffer;
