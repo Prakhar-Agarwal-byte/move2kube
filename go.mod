@@ -28,6 +28,7 @@ require (
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/viper v1.16.0
 	github.com/whilp/git-urls v1.0.0
+	go.starlark.net v0.0.0-20211203141949-70c0e40ae128
 	golang.org/x/crypto v0.12.0
 	golang.org/x/mod v0.10.0
 	golang.org/x/text v0.12.0
